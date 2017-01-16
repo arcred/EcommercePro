@@ -1,0 +1,95 @@
+<div class="container" ng-controller="cartController">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 align="center">WISHLIST ITEMS</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table">
+                <tr>
+                    <th>item image</th>
+                    <th>name</th>
+                    <th>price/quantity</th>
+                    <th>quantity</th>
+                    <th>Delete</th>
+                </tr>
+                <tbody class="table-hover">
+                    <tr ng-repeat="prod in cartProducts">
+                        <td><img src={{prod.img}}  class="img-thumbnail img-responsive" style="height:100px"></td>
+                        <td>{{prod.name}}</td>
+                        <td>{{prod.price*prod.count}}</td>
+                        <td><button class="btn btn-danger" ng-click="increaseCount(prod)">+</button> {{prod.count}} <button class="btn btn-danger" ng-click="decreaseCount(prod)">-</button></td>
+                        <td><button class="btn btn-danger" ng-click="removeItem(prod)"><span class="fa fa-trash-o"></span>Remove</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="errorDiv" class="alert alert-warning fade in">
+                    <a href="" class="close" data-dismiss="alert">×</a>
+                    <strong ng-bind="result"></strong>{{status}}  
+                </div>
+    <center>
+        <button align="center" class="btn btn-danger" href="" ng-click="continueShop()">continue Shopping</button>
+        <button class="btn btn-danger" ng-click="proceed()">Proceed to check out</button></center>
+    
+   
+    
+     
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="container" ng-controller="cartController">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 align="center">CART ITEMS</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table">
+                <tr>
+                    <th>item image</th>
+                    <th>name</th>
+                    <th>price/quantity</th>
+                    <th>quantity</th>
+                </tr>
+                <tbody class="table-hover">
+                    <tr ng-repeat="prod in cartProducts">
+                        <td><img src={{prod.img}}  class="img-thumbnail img-responsive" style="height:100px"></td>
+                        <td>{{prod.name}}</td>
+                        <td>{{prod.price}}</td>
+                        <td>{{prod.count}}</td>
+                    </tr>
+                    <tr><td></td><td></td><td></td><td align="right"><h3>Total Price :{{totalprice}}</h3></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <center><button class="btn btn-danger" href="" ng-click="proceed()" >Proceed to Checkout</button></center>
+    <h1>Iam in Cart control</h1>
+    <h1>{{confirmMsg}}</h1>
+</div>-->
+
+

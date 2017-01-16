@@ -1,0 +1,66 @@
+
+<div class="container" ng-controller="loginController" style="width:60%">                     
+    <div class="panel panel-info" align=center >
+        <div class="panel-heading">
+            <div class="panel-title">Sign In</div>
+            
+        </div>     
+
+        <div class="panel panel-body" >
+                        
+            <form id="loginform" class="form-horizontal" role="form">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input type="email" class="form-control" ng-model="userMail" placeholder="username or email" required>                                        
+                </div>            
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input type="password" class="form-control"  placeholder="password" ng-model="userPassword" required>
+                </div>   
+
+                <div id="errorDiv" class="alert alert-warning fade in">
+                    <a href="" class="close" data-dismiss="alert">×</a>
+                    <strong ng-bind="result"></strong>{{status}}  
+                </div>
+                <div class="form-group">
+
+                    <div class="col-sm-12 controls">
+                        <a id="btn-login" href="" class="btn btn-success" ng-click="userLogin()">Login  </a>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12 control">
+                        <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+                            Don't have an account! 
+                            <a href="#!/register">
+                            Sign Up Here
+                            </a>
+                        </div>
+                    </div>
+                </div>    
+            </form>     
+        </div>
+    </div> 
+         
+</div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

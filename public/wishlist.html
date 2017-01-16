@@ -1,0 +1,31 @@
+<div class="container" ng-controller="wishlistController" ng-init="initing()">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 align="center">WishList Products</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table">
+                <tr>
+                    <th>item image</th>
+                    <th>name</th>
+                    <th>price/quantity</th>
+                    <th>AddToWishList</th>
+                    <th>Delete</th>
+                </tr>
+                <tbody class="table-hover">
+                    <tr ng-repeat="prod in wishlistProducts">
+                        <td><img src={{prod.img}}  class="img-thumbnail img-responsive" style="height:100px"></td>
+                        <td>{{prod.name}}</td>
+                        <td>{{prod.price}}</td>
+                        <td><button class="btn btn-info" ng-click="addtocart(prod)"><span class="fa fa-plus"></span>AddToCart</button></td>
+                        <td><button class="btn btn-danger" ng-click="removeFromWishList(prod)"><span class="fa fa-trash-o"></span>Remove</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <center><a href="#!/checkout" ><button class="btn btn-danger">Proceed to check out</button></a></center>
+    <h1>Iam in Cart control</h1>
+    <h1>{{msg}}</h1>
+</div>

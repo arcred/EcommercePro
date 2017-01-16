@@ -1,0 +1,31 @@
+
+
+
+
+<div class="container" ng-controller="previousController">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 align="center">Your Previous Orders</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table">
+                <tr>
+                    <th>item image</th>
+                    <th>name</th>
+                    <th>price/quantity</th>
+                    <th>quantity</th>
+                   
+                </tr>
+                <tbody class="table-hover">
+                    <tr ng-repeat="prod in Previous">
+                        <td><img src={{prod.img}}  class="img-thumbnail img-responsive" style="height:100px"></td>
+                        <td>{{prod.name}}</td>
+                        <td>{{prod.price}}</td>
+                        <td> {{prod.count}} </td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
