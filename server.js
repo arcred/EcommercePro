@@ -3,11 +3,11 @@ var app=express();
 var mongojs=require('mongojs');
 var db = mongojs('mongodb://userM4I:M6IXpRnUqFVowXca@ecommerce', ['ecommerce'])
 
-var orders=mongojs('mongodb://userM4I:M6IXpRnUqFVowXca@ecommerce',['userOrders']);
+/*var orders=mongojs('mongodb://userM4I:M6IXpRnUqFVowXca@ecommerce',['userOrders']);
 var featured=mongojs('mongodb://userM4I:M6IXpRnUqFVowXca@ecommerce',['featureProd']);
 var userprod=mongojs('mongodb://userM4I:M6IXpRnUqFVowXca@ecommerce',['userProducts']);
 var users=mongojs('mongodb://userM4I:M6IXpRnUqFVowXca@ecommerce',['userDetails']);
-var wishlist=mongojs('mongodb://userM4I:M6IXpRnUqFVowXca@ecommerce',['wishlistProducts']);
+var wishlist=mongojs('mongodb://userM4I:M6IXpRnUqFVowXca@ecommerce',['wishlistProducts']);*/
 var bodyParser=require('body-parser'); 
 
 app.use(express.static(__dirname + "/public"));
