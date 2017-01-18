@@ -12,9 +12,9 @@ var bodyParser=require('body-parser');
 
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
-app.listen(3000);
+app.listen(8080);
 
-console.log("server running on port 3000");
+console.log("server running on port 8080");
 
 var session = require('express-session');
 
