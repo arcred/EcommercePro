@@ -1,7 +1,7 @@
 var express=require('express');
 var app=express();
 var mongojs=require('mongojs');
-var db = mongojs('mongodb://userM4I:M6IXpRnUqFVowXca@ecommercepro-ecommerce.44fs.preview.openshiftapps.com/ecommerce', ['ecommerce'])
+var db = mongojs('ecommerce', ['ecommerce'])
 
 /*var orders=mongojs('mongodb://userM4I:M6IXpRnUqFVowXca@ecommerce',['userOrders']);
 var featured=mongojs('mongodb://userM4I:M6IXpRnUqFVowXca@ecommerce',['featureProd']);
