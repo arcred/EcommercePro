@@ -1,12 +1,13 @@
 var express=require('express');
 var app=express();
 var mongojs=require('mongojs');
-var db=mongojs('ecommerce',['ecommerce']);
-var orders=mongojs('userOrders',['userOrders']);
-var featured=mongojs('featureProd',['featureProd']);
-var userprod=mongojs('userProducts',['userProducts']);
-var users=mongojs('userDetails',['userDetails']);
-var wishlist=mongojs('wishlistProducts',['wishlistProducts']);
+var db = mongojs('userO4L:baotuRtB51wKqn6P@ecommerce', ['ecommerce'])
+
+var orders=mongojs('userO4L:baotuRtB51wKqn6P@ecommerce',['userOrders']);
+var featured=mongojs('userO4L:baotuRtB51wKqn6P@ecommerce',['featureProd']);
+var userprod=mongojs('userO4L:baotuRtB51wKqn6P@ecommerce',['userProducts']);
+var users=mongojs('userO4L:baotuRtB51wKqn6P@ecommerce',['userDetails']);
+var wishlist=mongojs('userO4L:baotuRtB51wKqn6P@ecommerce',['wishlistProducts']);
 var bodyParser=require('body-parser'); 
 
 app.use(express.static(__dirname + "/public"));
