@@ -1,13 +1,13 @@
 var express=require('express');
 var app=express();
 var mongojs=require('mongojs');
-var db = mongojs('userM4I:M6IXpRnUqFVowXca@ecommerce', ['ecommerce'])
+var db = mongojs('mongodb://userM4I:M6IXpRnUqFVowXca@ecommerce', ['ecommerce'])
 
-var orders=mongojs('userM4I:M6IXpRnUqFVowXca@ecommerce',['userOrders']);
-var featured=mongojs('userM4I:M6IXpRnUqFVowXca@ecommerce',['featureProd']);
-var userprod=mongojs('userM4I:M6IXpRnUqFVowXca@ecommerce',['userProducts']);
-var users=mongojs('userM4I:M6IXpRnUqFVowXca@ecommerce',['userDetails']);
-var wishlist=mongojs('userM4I:M6IXpRnUqFVowXca@ecommerce',['wishlistProducts']);
+var orders=mongojs('mongodb://userM4I:M6IXpRnUqFVowXca@ecommerce',['userOrders']);
+var featured=mongojs('mongodb://userM4I:M6IXpRnUqFVowXca@ecommerce',['featureProd']);
+var userprod=mongojs('mongodb://userM4I:M6IXpRnUqFVowXca@ecommerce',['userProducts']);
+var users=mongojs('mongodb://userM4I:M6IXpRnUqFVowXca@ecommerce',['userDetails']);
+var wishlist=mongojs('mongodb://userM4I:M6IXpRnUqFVowXca@ecommerce',['wishlistProducts']);
 var bodyParser=require('body-parser'); 
 
 app.use(express.static(__dirname + "/public"));
