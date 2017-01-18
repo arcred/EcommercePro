@@ -21,6 +21,10 @@
 #logoutErrDiv{
     display: none;
 }
+#msgDiv{
+    display: none;
+    
+}
 
 #order_info{    
 display: none;

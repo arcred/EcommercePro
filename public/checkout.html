@@ -10,8 +10,11 @@
                     <strong ng-bind="result"></strong>{{status}}  
                 </div>
 
-
-<div class="panel-body" id="products_info">
+<div class="panel panel-warning" id="products_info">
+    <div class="panel-heading">
+            <h3 align="center">Your Order Details</h3>
+        </div>
+<div class="panel-body" >
     <table class="table">
         <tr>
         
@@ -31,6 +34,7 @@
         </tbody>
     </table>
  </div> 
+    </div>
 
 <div class="container" id="place_orderbtn"><button align="center" class="btn btn-danger" href="" ng-click="orderConfirm()">Place Order</button>
 </div>
@@ -40,41 +44,48 @@
 
 
 <div class="panel panel-info" id="order_info">
-
-
-<table >
-
-<tr><td><h4>Your order has been placed successfully!</h4></td></tr>  
+<div class="panel-heading">
+ <h4 class="panel-title">Your order has been placed successfully!
+    </h4>
+    </div>
+    <div class="panel-body" >
+        <table >
 <tr><td>Transaction Id:#{{Txid}}</td></tr>
 <tr><td>To Address:</td></tr>
 <tr><td>{{toAddr}}</td></tr>
 </table>
-
+     </div>
 <div class="container"><button align="center" class="btn btn-danger" href="" ng-click="continueShop()">continue Shopping</button></div>
 
-</div>
+
+    </div>
 
 <div class="container" id="checkOut">
         <div class="panel-group" id="accordion">
-            <div class="panel panel-default">
+            <div class="panel panel-info">
                 <div class="panel-heading">
                     <h4 class="panel-title">
                         <div data-toggle="collapse" data-parent="#accordion" href="#collapse1">Login</div>
                     </h4>
                 </div>
                 <div id="collapse1" class="panel-collapse collapse in">
+                    
                     <div class="panel-body">
+                         <table class="table">
+        <tr>
                         <label for="email">Email-Id</label>
                         <input type="email" id="email" ng-model="userMail">
+                             </tr>
+                             <tr>
                         <label for="password">Password</label>
-                        <input type="password" id="password" ng-model="inputPassword">
-                        <button class="btn btn-info" ng-click="loginCheckout()">Login</button>
+                                 <input type="password" id="password" ng-model="inputPassword"></tr>
+                             <tr><button class="btn btn-info" ng-click="loginCheckout()">Login</button></tr>
                         <p>{{msg}}</p>
-
+                        </table>
                     </div>
                 </div>
             </div>
-            <div class="panel panel-default">
+            <div class="panel panel-success">
                 <div class="panel-heading">
                     <h4 class="panel-title">
                         <div data-toggle="collapse" data-parent="#accordion" href="#collapse2">Guest User</div>

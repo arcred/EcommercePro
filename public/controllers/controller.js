@@ -23,8 +23,9 @@ myApp.filter('offset', function() {
 
 myApp.controller('itemsController',['$scope','$http', '$localStorage', '$sessionStorage','$location','$rootScope',function(a,b,c,d,e,f){
 	
-    f.wishlist=wishlistProd;
-    c.wishlist=wishlistProd;
+    
+    
+    
     if(f.search=="undefined"){
         f.search=[];    
     }
@@ -94,23 +95,7 @@ myApp.controller('itemsController',['$scope','$http', '$localStorage', '$session
 	//------------------------oagination new--------------------  
 
 
-	var isNotPresentInWishList=function(id){
-
-		console.log(id);
-        a.new=c.userDetails;
-        console.log(a.new[2]);
-        var em=a.new[2][0].emailid;
-
-		for(var i = 0;i<c.wishlist.length;i++){
-
-			if(c.wishlist[i]._id == id){
-				console.log("product is present");
-				return false;
-			}
-		}
-		console.log("product is not present");
-		return true;
-	}  
+	  
 
 
 	a.showDrop=function(actualItem){
@@ -185,25 +170,56 @@ myApp.controller('itemsController',['$scope','$http', '$localStorage', '$session
 		console.log("product is not present");
 		return true;
 	}
+    
+    var isNotPresentInWishList=function(id){
+
+		console.log(id);
+        
+        
+        for(var i = 0;i<c.wishlist.length;i++){
+                console.log(c.wishlist[i]);
+            if(c.wishlist[i]._id == id){
+                console.log("product is present");
+                 a.status="Product is already present in wishlist!";
+                    a.result="";
+                    document.getElementById("msgDiv").className="alert alert-danger";
+                    document.getElementById("msgDiv").style.display="block";
+                
+                
+                return false;
+            }
+        }
+        return true;
+       
+	}
+    
+
 
 
 	a.addWish = function(product){
 
-
+        console.log(isNotPresentInWishList(product["_id"]));
 		if(isNotPresentInWishList(product["_id"]))
 		{
 			var userWishlist=[];
-            c.wishlist.push(product);
-						
-			a.new=c.userDetails; 
+            
+            a.new=c.userDetails; 
 			console.log(a.new[2]);
 			a.em=a.new[2][0].emailid;
 
 			console.log(a.em);
 			var user_email=a.em;
-			console.log("inside orderConfirm");
+           
+            console.log("before push");
+            console.log(c.wishlist);
+            c.wishlist.push(product);
+            console.log("after push");
+            console.log(c.wishlist);
+						
+			
+			console.log("inside orderwish");
 			console.log(user_email);
-			console.log(c.wishlist);
+			
 
 			userWishlist.push(user_email);
 			userWishlist.push(c.wishlist);
@@ -361,7 +377,7 @@ myApp.controller('itemsController',['$scope','$http', '$localStorage', '$session
 			console.log(c.flag);
 			document.getElementById("logindd").style.display="none";
 			document.getElementById("userdd").style.display="block";
-
+            
 
 			a.new=c.userDetails; 
 			console.log("iam logged in : my user details are");
@@ -374,7 +390,23 @@ myApp.controller('itemsController',['$scope','$http', '$localStorage', '$session
 			console.log(em);
 			var addr=a.new[2][0].address;
 			var phn=a.new[2][0].phone;
+            if(typeof(c.wishlist)==undefined){
+                c.wishlist=[];
+            }
+            b.post('/wishlistProducts',({'emailid':em})).then(function(response){
+                console.log("inside resposne wishlist products");
+                console.log(response.data);
+                if( response.data.length!=0){
+                    c.wishlist=response.data[0].products;    
+                }
+                else{
+                    c.wishlist=[];
+                }
+                
 
+                console.log(c.wishlist);
+               
+            });    
 			f.userName=first
 			a.first=first;
 			a.second=second;
@@ -440,8 +472,9 @@ myApp.controller('itemsController',['$scope','$http', '$localStorage', '$session
 			});
 			f.search=appareldata;
 		});
-        document.getElementById("carouselAction").className="fade Out";
-        document.getElementById("carouselAction").style.display="none";
+        
+       
+        
 		e.path('/');
 	};
 
@@ -471,8 +504,8 @@ myApp.controller('itemsController',['$scope','$http', '$localStorage', '$session
 			nameProduct=temp[i];
 			searchItem(nameProduct);
 		}
-        document.getElementById("carouselAction").className="fade Out";
-        document.getElementById("carouselAction").style.display="none";
+        /*document.getElementById("carouselAction").className="fade Out";
+        document.getElementById("carouselAction").style.display="none";*/
         
 		e.path('/');
 	}; 
@@ -487,8 +520,8 @@ myApp.controller('itemsController',['$scope','$http', '$localStorage', '$session
 			nameProduct=temp[i];
 			searchItem(nameProduct);
 		}
-        document.getElementById("carouselAction").className="fade Out";
-        document.getElementById("carouselAction").style.display="none";
+        /*document.getElementById("carouselAction").className="fade Out";
+        document.getElementById("carouselAction").style.display="none";*/
 		e.path('/');   
 	};   
 
@@ -1212,7 +1245,7 @@ myApp.controller('wishlistController',['$scope','$http', '$localStorage', '$sess
 		b.post('/wishlistProducts',({'emailid':em})).then(function(response){
             console.log("inside resposne wishlist products");
             console.log(response.data);
-            c.wishlist=response.data.products;
+            c.wishlist=response.data[0].products;
             a.wishlistProducts=c.wishlist;
 		});
 		
@@ -1230,8 +1263,11 @@ myApp.controller('wishlistController',['$scope','$http', '$localStorage', '$sess
 	}
 
 	a.removeFromWishList = function(product){
+        var userWishlist=[];
+        console.log(product);
 		var index = c.wishlist.indexOf(product);
-		c.wishlist=c.wishlist.splice(index,1);
+        console.log(index);
+		c.wishlist.splice(index,1);
         a.new=c.userDetails; 
 			console.log(a.new[2]);
 			a.em=a.new[2][0].emailid;
@@ -1247,7 +1283,7 @@ myApp.controller('wishlistController',['$scope','$http', '$localStorage', '$sess
 			b.post('/insertWishlist',(userWishlist)).then(function(response){
 				console.log(response.data);
 			});
-        e.path('/wishlist');
+        a.initing();
 
 	}
 

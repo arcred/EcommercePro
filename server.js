@@ -241,7 +241,36 @@ app.post('/insertWishlist',function(req,res){
 	var collection=wishlist.collection('wishlistProducts');
 	var document = {"emailid":req.body[0],"products":req.body[1]};
 
-	collection.insert(document,function(err,docs){
+    collection.remove({'emailid':req.body[0]},function(err,doc){
+        
+        console.log("removed from db");
+           });
+        
+     collection.insert(document,function(err,docs){
+
+      console.log("in insert");
+
+		if(err){
+			console.log(err);
+		}
+		else{
+
+			res.send("inserted into wishlist");
+
+		}
+
+	});
+            
+        
+  
+});
+app.post('/removeWishlist',function(req,res){
+	console.log(req.body);
+	console.log(req.body[1].length);
+	var collection=wishlist.collection('wishlistProducts');
+	var document = {"emailid":req.body[0],"products":req.body[1]};
+
+	collection.remove(document,function(err,docs){
 
 
 
@@ -295,7 +324,8 @@ app.post('/wishlistProducts',function(req,res){
 		else
 		{
 			console.log(doc.length);
-			res.json(doc[doc.length-1]);
+			//res.json(doc[doc.length-1]);
+            res.json(doc);
 			console.log("sent wishlist products from server");
 
 		}
