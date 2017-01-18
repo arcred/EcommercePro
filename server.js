@@ -1,7 +1,7 @@
 var express=require('express');
 var app=express();
-
-var db = require('mongojs').connect('mongodb://userM4I:M6IXpRnUqFVowXca@ecommerce', ['ecommerce']);
+var mongojs=require('mongojs');
+var db = mongojs('userM4I:M6IXpRnUqFVowXca@redarc.com:27017/ecommerce', ['ecommerce'])
 
 /*var orders=mongojs('mongodb://userM4I:M6IXpRnUqFVowXca@ecommerce',['userOrders']);
 var featured=mongojs('mongodb://userM4I:M6IXpRnUqFVowXca@ecommerce',['featureProd']);
