@@ -499,7 +499,8 @@ myApp.controller('itemsController',['$scope','$http', '$localStorage', '$session
 		});
         
        
-        
+        document.getElementById("carouselAction").className="fade Out";
+        document.getElementById("carouselAction").style.display = "none";
 		e.path('/');
 	};
 
@@ -513,8 +514,8 @@ myApp.controller('itemsController',['$scope','$http', '$localStorage', '$session
 				dataCount["count"] = 0;
 				responseDataWithCount.push(dataCount);
 			});
-            document.getElementById("carouselAction").className="fade Out";
-            document.getElementById("carouselAction").style.display="none";
+            
+            
 			f.search=responseData[0]; 
 		});
 	};
@@ -531,7 +532,8 @@ myApp.controller('itemsController',['$scope','$http', '$localStorage', '$session
 		}
         /*document.getElementById("carouselAction").className="fade Out";
         document.getElementById("carouselAction").style.display="none";*/
-        
+        document.getElementById("carouselAction").className="fade Out";
+        document.getElementById("carouselAction").style.display = "none";
 		e.path('/');
 	}; 
 
