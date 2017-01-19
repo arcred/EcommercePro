@@ -1,16 +1,11 @@
 <div ng-controller="itemsController" ng-init="init()">
     
      <div id="logoutErrDiv" class="alert alert-warning fade in">
-                    <a href="" class="close" data-dismiss="alert">×</a>
+                  
                     <strong ng-bind="result"></strong>{{status}}  
             </div>
-                        
-    
-                    
                  
-                        
-                       
-                    
+              
                    
      <div id="myModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-dialog-center">
@@ -45,7 +40,7 @@
                     </div>
                     
                      <div id="msgDiv" class="alert alert-warning fade in" style="width:400px;margin-left:60px;text-align:center" >
-                    <a href="" class="close" data-dismiss="alert">×</a>
+                    
                     <strong ng-bind="result"></strong>{{status}}  
                     </div>
                      
@@ -100,7 +95,7 @@
 
                         </div>
                     </div>  
-                    <input type="search" name="searchBy" id="searchBy" class="form-control" placeholder="search in all categories" ng-model="nameItem"/>
+                    <input type="search" name="searchBy" id="searchBy" class="form-control" placeholder="search in all categories" ng-model="nameItem" required/>
                     <span class="input-group-btn">
                         <button id="filter" class="btn btn-info btn-block" ng-click="searchProducts()">
                             <span class="glyphicon glyphicon-search"></span>
@@ -122,16 +117,16 @@
             </ol>
             <div class="carousel-inner" id="showCarousel" role="listbox">
                 <div class="item active">
-                    <img src="img/c1.jpg" alt="Chania">
+                    <img src="img/bagscaousel.jpg" alt="">
                 </div>
                 <div class="item">
-                    <img src="img/c2.gif" alt="Chania">
+                    <img src="img/banner-TV_Antenna.jpg" alt="">
                 </div>
                 <div class="item">
-                    <img src="img/c3.jpg" alt="Flower">
+                    <img src="img/carousel3.jpg" alt="">
                 </div>
                 <div class="item">
-                    <img src="img/c4.jpg" alt="Flower">
+                    <img src="img/carousel6.jpg" alt="">
                 </div>
             </div>
             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">

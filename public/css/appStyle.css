@@ -20,6 +20,13 @@
 }
 #logoutErrDiv{
     display: none;
+    margin-left: 200px;
+    margin-right: 200px;
+    text-align: center;
+    
+    font-family:inherit;
+    font-size: 17px;
+    
 }
 #msgDiv{
     display: none;

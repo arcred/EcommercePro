@@ -1,9 +1,7 @@
 
 
 <div class="container" ng-controller="checkoutController" ng-init="init()">
-<h5> In checkout Page</h5>
 
-<h2>{{val}}</h2>
     
     <div id="errorDiv" class="alert alert-warning fade in">
                     <a href="" class="close" data-dismiss="alert">×</a>
@@ -62,29 +60,40 @@
 
 <div class="container" id="checkOut">
         <div class="panel-group" id="accordion">
+           
             <div class="panel panel-info">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <div data-toggle="collapse" data-parent="#accordion" href="#collapse1">Login</div>
+                        <div data-toggle="collapse" data-parent="#accordion" href="#collapse1">If Already Registered? Login Here</div>
                     </h4>
                 </div>
-                <div id="collapse1" class="panel-collapse collapse in">
+                <div id="collapse1" class="panel-collapse collapse">
                     
-                    <div class="panel-body">
-                         <table class="table">
-        <tr>
-                        <label for="email">Email-Id</label>
-                        <input type="email" id="email" ng-model="userMail">
-                             </tr>
-                             <tr>
-                        <label for="password">Password</label>
-                                 <input type="password" id="password" ng-model="inputPassword"></tr>
-                             <tr><button class="btn btn-info" ng-click="loginCheckout()">Login</button></tr>
-                        <p>{{msg}}</p>
-                        </table>
+                <div class="panel panel-body" >
+              <center>          
+            <form id="loginform" class="form-horizontal" role="form">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input type="email" class="form-control" ng-model="userMail" placeholder="username or email" required>                                        
+                </div>            
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input type="password" class="form-control"  placeholder="password" ng-model="userPassword" required>
+                </div>   
+                <div class="form-group">
+
+                    <div class="col-sm-12 controls">
+                        <a id="btn-login" href="" class="btn btn-success" ng-click="loginCheckout()">Login</a>
                     </div>
                 </div>
+                <p>{{msg}}</p>
+                </form>   
+                  </center>
+                </div>
+                </div>
+            
             </div>
+   
             <div class="panel panel-success">
                 <div class="panel-heading">
                     <h4 class="panel-title">
@@ -92,7 +101,53 @@
                     </h4>
                 </div>
                 <div id="collapse2" class="panel-collapse collapse">
-                    <div class="panel-body">
+                    <center>
+                    
+                         <div id="form" align=center>
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="name" class="col-sm-2 control-label">Name</label>
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                    <input type="text" class="form-control"  id="name"  pattern="[a-zA-Z]{3,15}" ng-model="guestName" placeholder="Enter your Name" required/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="col-sm-2 control-label">Email Id</label>
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                    <input type="text" class="form-control"id="name"  pattern="[a-zA-Z]{3,15}" ng-model="guestMail" placeholder="Enter your Email id" required/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address" class="col-sm-2 control-label">Address</label>
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                                    <input type="email" class="form-control"  id="email"  ng-model="guestAddress"  placeholder="Enter your Address" required/>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="form-group">
+                            <label for="phone" class="col-sm-2 control-label">Phone No</label>
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                                    <input type="email" class="form-control"  id="email"  ng-model="guestPhone"  placeholder="Enter your Address" required/>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                        <button class="btn btn-danger" ng-click="orderConfirm()"> Place Order</button> 
+                            </div>
+                        
+                             </form>
+                        </div>
+                   <!-- <div class="panel-body">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name"  ng-model="guestName">
                         <label for="email">Email-ID</label>
@@ -102,10 +157,13 @@
                         <label for="phone">Phone</label>
                         <input type="text" id="phone" name="phone" ng-model="guestPhone"> 
                         <button class="btn btn-danger" ng-click="orderConfirm()"> Place Order</button> 
-                       conf <p>{{msg}}</p>
-                    </div>
+                        <p>{{msg}}</p>
+                    </div>-->
+                    </center>
                 </div>
             </div>
+        
         </div> 
     </div>
-</div
+   
+</div>
