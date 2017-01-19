@@ -27,7 +27,7 @@
                             <p> {{description}}</p>
                             <div class="row" align=center>
                                 <div align=center id="wishlist" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                    <Button class="btn btn-info" ng-click="addWish(product)"><i class="fa fa-shopping-cart"></i>Add To WishList</Button>
+                                    <Button class="btn btn-info" ng-click="addWish(product)"><span class="glyphicon glyphicon-heart pull-right"></span>WishList</Button>
                                 </div>
                                 <div align=center class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                                     <Button class="btn btn-danger" ng-click="addItem(product)"><i class="fa fa-shopping-cart"></i>Add To Cart</Button>            
@@ -155,7 +155,7 @@
                     <h4 style="font-family: 'Acme';font-size: 20px"><b>{{prod.name}}</b></h4>
                     <span>&#8377;<b>{{prod.price}}</b></span>
                     <br>
-                    <Button class="btn btn-primary" data-toggle="modal" data-target="#myModal" ng-click="view(prod)">Details</Button>
+                    <Button class="btn btn-primary" data-toggle="modal" data-target="#myModal" ng-click="view(prod)"><span class="glyphicon glyphicon-list"></span>Details</Button>
 
                     <Button class="btn btn-danger" ng-click="addItem(prod)"><i class="fa fa-shopping-cart"></i>Add To Cart</Button>
                    <br>
