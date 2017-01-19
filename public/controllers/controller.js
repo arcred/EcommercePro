@@ -914,10 +914,10 @@ myApp.controller('loginController',['$scope','$http', '$localStorage', '$session
 							loginStatus="true";
 							email=response.data[2][0].emailid;
                             a.userName=response.data[2][0].firstname;
-							
+							e.path('/');
 							
 							f.init();
-                            e.path('/');
+                            
                             
                             
                             
