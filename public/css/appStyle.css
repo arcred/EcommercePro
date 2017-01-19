@@ -200,6 +200,10 @@ min-height:100%;
 font-family: 'Open Sans', sans-serif;
 }
 
+#searchdiv{
+    min-height:350px;
+}
+
 .thumbnail {
 position: relative;
 padding: 0px;
