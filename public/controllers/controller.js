@@ -497,11 +497,11 @@ myApp.controller('itemsController',['$scope','$http', '$localStorage', '$session
 			});
 			f.search=appareldata;
 		});
-        
+        e.path('/');
         f.init();
         document.getElementById("carouselAction").className="fade Out";
         document.getElementById("carouselAction").style.display = "none";
-		e.path('/');
+		
 	};
 
 
