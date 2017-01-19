@@ -116,6 +116,7 @@ background-color: white
 
 }
 .navbar-default .navbar-nav > li > a{
+    font-family: 'Open Sans', sans-serif;
 color: black;
 font-size: 20px;
 }
