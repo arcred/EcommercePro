@@ -116,12 +116,12 @@ background-color: white
 
 }
 .navbar-default .navbar-nav > li > a{
-color: floralwhite;
+color: black;
 font-size: 20px;
 }
 
 .navbar-default .navbar-brand{
-color: floralwhite;
+color: white;
 }
 
 .dropdown-submenu:hover .dropdown-menu {
