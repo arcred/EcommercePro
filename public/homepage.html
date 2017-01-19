@@ -146,10 +146,10 @@
     </div>
 
     <div class="row">
-        <div id="searchdiv" class="col-xs-6 col-sm-4 col-md-4 col-lg-3" ng-repeat="prod in search|
+        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3" ng-repeat="prod in search|
                                                                 offset: currentPage*itemsPerPage |
                                                                 limitTo: itemsPerPage">
-            <div class="thumbnail">
+            <div id="searchdiv" class="thumbnail">
                 <a  href="" target="_blank"><img class="img-responsive" src={{prod.img}} alt="#" ng-style="{'width':'300px','height':'250px'}"/></a>
                 <div class="caption" align=center>
                     <h4 style="font-family: 'Acme';font-size: 20px"><b>{{prod.name}}</b></h4>
