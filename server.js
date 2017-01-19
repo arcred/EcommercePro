@@ -1,13 +1,9 @@
 var express=require('express');
 var app=express();
 var mongojs=require('mongojs');
-var db = mongojs('mongodb://admin:admin@ds117859.mlab.com:17859/heroku_zz1qkv7p', ['ecommerce'])
+var db = mongojs('mongodb://admin:admin@ds117859.mlab.com:17859/heroku_zz1qkv7p', ['ecommerce','userOrders','featureProd','userProducts','userDetails','wishlistProducts'])
 
-/*var orders=mongojs('mongodb://userM4I:M6IXpRnUqFVowXca@ecommerce',['userOrders']);
-var featured=mongojs('mongodb://userM4I:M6IXpRnUqFVowXca@ecommerce',['featureProd']);
-var userprod=mongojs('mongodb://userM4I:M6IXpRnUqFVowXca@ecommerce',['userProducts']);
-var users=mongojs('mongodb://userM4I:M6IXpRnUqFVowXca@ecommerce',['userDetails']);
-var wishlist=mongojs('mongodb://userM4I:M6IXpRnUqFVowXca@ecommerce',['wishlistProducts']);*/
+
 var bodyParser=require('body-parser'); 
 
 app.use(express.static(__dirname + "/public"));
@@ -31,7 +27,7 @@ app.use(session({
 
 app.post('/featureProd',function(req,res){
 	console.log("iam in nginit server");
-	var collection = featured.collection('featureProd');
+	var collection = db.collection('featureProd');
 	collection.find(function(err,doc)
 					{
 		if(err){
@@ -82,7 +78,7 @@ app.post('/userDetails', function (req, res) {
 	sessionDetails.push(sess);
 
 	console.log(req.body);
-	var collection=users.collection('userDetails');
+	var collection=db.collection('userDetails');
 	var document = {"firstname":req.body.firstname, "secondname":req.body.secondname,"password":req.body.password,"emailid":req.body.emailid,"phone":req.body.phone,"address":req.body.address};
 
 	collection.findOne({'emailid':req.body.emailid},function(error,exist){
@@ -139,7 +135,7 @@ app.post('/getAddress',function(req,res){
 
 	console.log(req.body);
 
-	var collection=users.collection('userDetails');
+	var collection=db.collection('userDetails');
 
 	collection.find({'emailid':req.body.emailid},{'address':1},function(err,doc){
 
@@ -169,7 +165,7 @@ app.post('/userProducts',function(req,res){
 	console.log("inside userProducts");
 	console.log(req.body);
 	console.log(req.body.length);
-	var collection=orders.collection('userOrders');
+	var collection=db.collection('userOrders');
 	var collection1=db.collection('ecommerce');
 	// var document = {"emailid":req.body[0],"products":req.body[1]};
 
@@ -220,7 +216,7 @@ app.post('/userProducts',function(req,res){
 app.post('/insert',function(req,res){
 	console.log(req.body);
 	console.log(req.body[1].length);
-	var collection=orders.collection('userOrders');
+	var collection=db.collection('userOrders');
 	var document = {"emailid":req.body[0],"products":req.body[1]};
 
 	collection.insert(document,function(err,docs){
@@ -242,7 +238,7 @@ app.post('/insert',function(req,res){
 app.post('/insertWishlist',function(req,res){
 	console.log(req.body);
 	console.log(req.body[1].length);
-	var collection=wishlist.collection('wishlistProducts');
+	var collection=db.collection('wishlistProducts');
 	var document = {"emailid":req.body[0],"products":req.body[1]};
 
     collection.remove({'emailid':req.body[0]},function(err,doc){
@@ -271,7 +267,7 @@ app.post('/insertWishlist',function(req,res){
 app.post('/removeWishlist',function(req,res){
 	console.log(req.body);
 	console.log(req.body[1].length);
-	var collection=wishlist.collection('wishlistProducts');
+	var collection=db.collection('wishlistProducts');
 	var document = {"emailid":req.body[0],"products":req.body[1]};
 
 	collection.remove(document,function(err,docs){
@@ -297,7 +293,7 @@ app.post('/previousOrders',function(req,res){
 
 	console.log(req.body);
 
-	var collection=orders.collection('userOrders');
+	var collection=db.collection('userOrders');
 	collection.find({'emailid':req.body.emailid},{'products':1},function(err,doc){
 
 		if(err)
@@ -318,7 +314,7 @@ app.post('/wishlistProducts',function(req,res){
 
 	console.log(req.body);
 
-	var collection=wishlist.collection('wishlistProducts');
+	var collection=db.collection('wishlistProducts');
 	collection.find({'emailid':req.body.emailid},{'products':1},function(err,doc){
 
 		if(err)
