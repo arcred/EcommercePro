@@ -11,11 +11,11 @@
             <form id="loginform" class="form-horizontal" role="form">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input type="email" class="form-control" ng-model="userMail" placeholder="username or email" required>                                        
+                    <input type="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"  ng-model="userMail" placeholder="username or email" required="true">                                        
                 </div>            
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                    <input type="password" class="form-control"  placeholder="password" ng-model="userPassword" required>
+                    <input type="password" class="form-control"  placeholder="password" ng-model="userPassword" required="true" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" >
                 </div>   
 
                 <div id="errorDiv" class="alert alert-warning fade in">
@@ -41,7 +41,12 @@
             </form>     
         </div>
     </div> 
+     <div>
+    
+         <h4>--> All fields are mandatory</h4>
+         <h4>--> Password should contain atleast one uppercase letter,one lowercase letter and a numeric </h4>
          
+    </div>    
 </div>
     
 

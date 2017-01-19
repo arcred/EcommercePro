@@ -1066,10 +1066,10 @@ myApp.controller('checkoutController',['$scope','$http', '$localStorage', '$sess
 
 							//a.confirmMsg="Thank you Your order has been placed!";
                             
-                            a.result="Thank you ..!"
+                           /* a.result="Thank you ..!"
 				a.status="Your order has been placed!";
 				document.getElementById("errorDiv").className="alert alert-success ";
-				document.getElementById("errorDiv").style.display="block";
+				document.getElementById("errorDiv").style.display="block";*/
                             
 
 							a.Txid= Math.floor((Math.random() * 10000000000) + 1) ;
@@ -1139,11 +1139,11 @@ myApp.controller('checkoutController',['$scope','$http', '$localStorage', '$sess
 
 						//	a.confirmMsg="Thank you Your order has been placed!";
                             
-                            a.result="Thank you ..!"
+                            /*a.result="Thank you ..!"
 				a.status="Your order has been placed!";
 				document.getElementById("errorDiv").className="alert alert-success ";
 				document.getElementById("errorDiv").style.display="block";
-                            
+                            */
 
 							a.Txid= Math.floor((Math.random() * 10000000000) + 1) ;
 
@@ -1320,13 +1320,7 @@ myApp.controller('wishlistController',['$scope','$http', '$localStorage', '$sess
 	a.addtocart = function(product){
 
 		f.addItem(product);
-        bootbox.alert({ 
-  size: "small",
-  title: "",
-  message: "Product added to cart!", 
- 
         
-	});
     }
 
 	a.removeFromWishList = function(product){

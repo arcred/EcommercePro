@@ -17,6 +17,7 @@
 
 #errorDiv{
     display:none;
+    
 }
 #logoutErrDiv{
     display: none;
@@ -35,6 +36,11 @@
 
 #order_info{    
 display: none;
+    margin-left: 300px;
+    /*//text-align: center;*/
+    height:200px;
+    width: 500px;
+    opacity: inherit; 
 }
 
 #products_info{
@@ -99,16 +105,19 @@ display: inline-block;
 padding-right:20px;
 }
 
-
+#logo{
+    height: 40px;
+    width: 80px;
+}
 
 
 .navbar-default .navbar-collapse, .navbar-default .navbar-form{
-background-color: rgba(86, 101, 115,0.5);
+background-color: white
 
 }
 .navbar-default .navbar-nav > li > a{
 color: floralwhite;
-font-size: 16px;
+font-size: 20px;
 }
 
 .navbar-default .navbar-brand{
@@ -116,9 +125,10 @@ color: floralwhite;
 }
 
 .dropdown-submenu:hover .dropdown-menu {
-display: block;
+
 -webkit-animation: fadeIn 0.5s;
 animation: fadeIn 0.5s;
+display: block;
 }
 .dropdown-submenu .dropdown-menu {
 top: 0;

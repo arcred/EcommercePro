@@ -14,7 +14,7 @@
                             <div class="col-sm-10">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                    <input type="text" class="form-control"  id="name"  pattern="[a-zA-Z]{3,15}" ng-model="first_Name" placeholder="Enter your Name" required/>
+                                    <input type="text" class="form-control"  id="name"  pattern="[a-zA-Z]{3,15}" ng-model="first_Name" placeholder="Enter your Name" required="true" title="Firstname should contain characters only with min length of 3 and max length of 15" />
                                 </div>
                             </div>
                         </div>
@@ -23,7 +23,7 @@
                             <div class="col-sm-10">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                    <input type="text" class="form-control"id="name"  pattern="[a-zA-Z]{3,15}" ng-model="last_Name" placeholder="Enter your Name" required/>
+                                    <input type="text" class="form-control"id="name"  pattern="[a-zA-Z]{3,15}" ng-model="last_Name" placeholder="Enter your Name" required="true" title="Secondname should contain characters only with min length of 3 and max length of 15" />
                                 </div>
                             </div>
                         </div>
@@ -32,7 +32,7 @@
                             <div class="col-sm-10">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                                    <input type="email" class="form-control"  id="email"  ng-model="email_Id"  placeholder="Enter your Email" required/>
+                                    <input type="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="email"  ng-model="email_Id"  placeholder="Enter your Email" required="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" />
                                 </div>
                             </div>
                         </div>
@@ -42,7 +42,7 @@
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-phone fa" aria-hidden="true"></i></span>
                                  
-                                    <input type="phone" class="form-control" id="phone"  placeholder="Enter your Phone number" ng-model="contact" required/>
+                                    <input type="phone" class="form-control" id="phone"  placeholder="Enter your Phone number" ng-model="contact" required="true" pattern="[0-9]{10,12}" title="min length 0f 10 digits required" />
                                 </div>
                             </div>
                         </div>   
@@ -59,7 +59,7 @@
                             <div class="col-sm-10">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                    <input type="password" class="form-control"  id="password"  ng-model="pass_word" placeholder="Enter your Password"/>
+                                    <input type="password" class="form-control"  id="password"  ng-model="pass_word" placeholder="Enter your Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"  />
                                 </div>
                             </div>
                         </div>

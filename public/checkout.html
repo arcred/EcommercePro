@@ -13,7 +13,9 @@
             <h3 align="center">Your Order Details</h3>
         </div>
 <div class="panel-body" >
-    <table class="table">
+  
+ <table class="table">
+        <thead>
         <tr>
         
             <th>Product Name</th>               
@@ -21,16 +23,19 @@
             <th>Price</th>
             
         </tr>
-        <tbody class="table-hover">
+        </thead>
+        <tbody >
             <tr ng-repeat="prod in cartProducts">
                 
                 <td>{{prod.name}}</td>
                 <td>{{prod.count}}</td>
                 <td>{{prod.price*prod.count}}</td>
             </tr>
+            
             <tr align=right><td><h3>Total Price :{{totalprice}}</h3></td></tr>
         </tbody>
-    </table>
+    </table> 
+
  </div> 
     </div>
 
@@ -48,9 +53,11 @@
     </div>
     <div class="panel-body" >
         <table >
-<tr><td>Transaction Id:#{{Txid}}</td></tr>
-<tr><td>To Address:</td></tr>
+            
+<tr><td><b>Transaction ID:</b></td><td>#{{Txid}}</td></tr>
+<tr><td><b>To Address:</b></td></tr>
 <tr><td>{{toAddr}}</td></tr>
+                
 </table>
      </div>
 <div class="container"><button align="center" class="btn btn-danger" href="" ng-click="continueShop()">continue Shopping</button></div>
@@ -74,11 +81,11 @@
             <form id="loginform" class="form-horizontal" role="form">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input type="email" class="form-control" ng-model="userMail" placeholder="username or email" required>                                        
+                    <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="form-control" ng-model="userMail" placeholder="username or email" required>                                        
                 </div>            
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                    <input type="password" class="form-control"  placeholder="password" ng-model="userPassword" required>
+                    <input type="password" class="form-control" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="password" ng-model="userPassword" required>
                 </div>   
                 <div class="form-group">
 
@@ -110,7 +117,7 @@
                             <div class="col-sm-10">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                    <input type="text" class="form-control"  id="name"  pattern="[a-zA-Z]{3,15}" ng-model="guestName" placeholder="Enter your Name" required/>
+                                    <input type="text" class="form-control" pattern="[a-zA-Z]{3,15}" ng-model="guestName" placeholder="Enter your Name" required/>
                                 </div>
                             </div>
                         </div>
@@ -119,7 +126,7 @@
                             <div class="col-sm-10">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                    <input type="text" class="form-control"id="name"  pattern="[a-zA-Z]{3,15}" ng-model="guestMail" placeholder="Enter your Email id" required/>
+                                    <input type="text" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"  ng-model="guestMail" placeholder="Enter your Email id" required/>
                                 </div>
                             </div>
                         </div>
@@ -128,7 +135,7 @@
                             <div class="col-sm-10">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                                    <input type="email" class="form-control"  id="email"  ng-model="guestAddress"  placeholder="Enter your Address" required/>
+                                    <input type="email" class="form-control"  ng-model="guestAddress"  placeholder="Enter your Address" required/>
                                 </div>
                             </div>
                         </div>
@@ -137,7 +144,7 @@
                             <div class="col-sm-10">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                                    <input type="email" class="form-control"  id="email"  ng-model="guestPhone"  placeholder="Enter your Address" required/>
+                                    <input  class="form-control"  ng-model="guestPhone"  placeholder="Enter your Address" required/>
                                 </div>
                             </div>
                         </div>

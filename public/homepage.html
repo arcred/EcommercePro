@@ -2,8 +2,8 @@
     
      <div id="logoutErrDiv" class="alert alert-warning fade in">
                   
-                    <strong ng-bind="result"></strong>{{status}}  
-            </div>
+        <strong ng-bind="result"></strong>{{status}}  
+    </div>
                  
               
                    
@@ -141,7 +141,7 @@
     </div>
 
     <div class="row">
-        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3" ng-repeat="prod in search|
+        <div style="min-height:370px" class="col-xs-6 col-sm-4 col-md-4 col-lg-3" ng-repeat="prod in search|
                                                                 offset: currentPage*itemsPerPage |
                                                                 limitTo: itemsPerPage">
             <div class="thumbnail">
