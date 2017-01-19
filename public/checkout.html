@@ -134,8 +134,8 @@
                             <label for="address" class="col-sm-2 control-label">Address</label>
                             <div class="col-sm-10">
                                 <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                                    <input type="email" class="form-control"  ng-model="guestAddress"  placeholder="Enter your Address" required/>
+                                    <span class="input-group-addon"><i class="fa fa-home fa" aria-hidden="true"></i></span>
+                                    <input type="text" class="form-control"  ng-model="guestAddress"  placeholder="Enter your Address" required/>
                                 </div>
                             </div>
                         </div>
@@ -143,8 +143,8 @@
                             <label for="phone" class="col-sm-2 control-label">Phone No</label>
                             <div class="col-sm-10">
                                 <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                                    <input  class="form-control"  ng-model="guestPhone"  placeholder="Enter your Address" required/>
+                                    <span class="input-group-addon"><i class="fa fa-phone fa" aria-hidden="true"></i></span>
+                                    <input  class="form-control" type="number" pattern="^[0-9]{10}$" ng-model="guestPhone"  placeholder="Enter your Phone number" required/>
                                 </div>
                             </div>
                         </div>
