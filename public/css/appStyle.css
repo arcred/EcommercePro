@@ -133,8 +133,7 @@ color: white;
 
 .dropdown-submenu:hover .dropdown-menu {
 
--webkit-animation-duration: 0s;
--webkit-animation-delay: 1s;
+
 display: block;
 }
 .dropdown-submenu .dropdown-menu {
