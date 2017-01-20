@@ -141,8 +141,7 @@ display: block;
 top: 0;
 left: 100%;
 margin-top: -1px;
--webkit-animation: fadeIn 0.5s;
-animation: fadeIn 0.5s;
+
 }
 #order_info{    
 display: none;
