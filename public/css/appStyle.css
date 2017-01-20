@@ -5,7 +5,9 @@
     min-height:100%;
     
 }
-
+#productName{
+    min-height:35px;
+}
 
 .input-group{
     padding-top: 10px;
