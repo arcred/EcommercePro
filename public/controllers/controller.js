@@ -317,7 +317,7 @@ myApp.controller('itemsController',['$scope','$http', '$localStorage', '$session
 
 	f.init = function()
 	{  
-
+	e.path('/');
         a.alertmsg="";
 		f.cartcount=c.count;
 		console.log(c.flag);
