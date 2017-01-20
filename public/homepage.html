@@ -152,7 +152,7 @@
             <div id="searchdiv" class="thumbnail">
                 <a  href="" target="_blank"><img class="img-responsive" src={{prod.img}} alt="#" ng-style="{'width':'300px','height':'250px'}"/></a>
                 <div class="caption" align=center>
-                    <h4 style="font-family: 'Acme';font-size: 20px"><b>{{prod.name}}</b></h4>
+                    <div id="productName"><h4 style="font-family: 'Acme';font-size: 20px"><b>{{prod.name}}</b></h4></div>
                     <span>&#8377;<b>{{prod.price}}</b></span>
                     <br>
                     <Button class="btn btn-primary" data-toggle="modal" data-target="#myModal" ng-click="view(prod)"><span class="glyphicon glyphicon-list"></span>Details</Button>
