@@ -29,6 +29,9 @@ myApp.controller('itemsController',['$scope','$http', '$localStorage', '$session
     if(f.search=="undefined"){
         f.search=[];    
     }
+    if(typeof(c.userDetails="undefined")){
+    	c.userDeatils = [];
+    }
     
 	a.pageCount = function() {
 
