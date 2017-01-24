@@ -476,6 +476,7 @@ myApp.controller('itemsController',['$scope','$http', '$localStorage', '$session
 
 			});
 		}
+		location.reload();
 	};
 
 	a.viewProducts=function(cat,dep)
