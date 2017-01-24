@@ -181,7 +181,6 @@ myApp.controller('itemsController',['$scope','$http', '$localStorage', '$session
                 console.log(c.wishlist[i]);
             if(c.wishlist[i]._id == id){
                 console.log("product is present");
-            
                 return false;
                
                 
@@ -388,6 +387,7 @@ myApp.controller('itemsController',['$scope','$http', '$localStorage', '$session
 
 			});
 		}
+		location.reload();
         
 	};
 	a.init = function()
@@ -396,7 +396,6 @@ myApp.controller('itemsController',['$scope','$http', '$localStorage', '$session
 		{
 			c.flag="false";    
 		}
-
 		f.cartcount=c.count;
 		console.log(c.flag);
 		if(c.flag=="true"){
@@ -476,7 +475,7 @@ myApp.controller('itemsController',['$scope','$http', '$localStorage', '$session
 
 			});
 		}
-		location.reload();
+		
 	};
 
 	a.viewProducts=function(cat,dep)
