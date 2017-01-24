@@ -317,6 +317,7 @@ myApp.controller('itemsController',['$scope','$http', '$localStorage', '$session
 
 	f.init = function()
 	{  
+		e.path('/');
         	a.alertmsg="";
 		f.cartcount=c.count;
 		console.log(c.flag);
@@ -387,7 +388,7 @@ myApp.controller('itemsController',['$scope','$http', '$localStorage', '$session
 			});
 		}
 		location.reload();
-		e.path('/');
+		
         
 	};
 	a.init = function()
@@ -915,6 +916,7 @@ myApp.controller('loginController',['$scope','$http', '$localStorage', '$session
 							loginStatus="true";
 							email=response.data[2][0].emailid;
                             				a.userName=response.data[2][0].firstname;
+							location.reload();
 							f.init();
 							e.path('/');
 							
