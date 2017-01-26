@@ -387,7 +387,7 @@ myApp.controller('itemsController',['$scope','$http', '$localStorage', '$session
 
 			});
 		}
-		location.reload();
+		
 		
         
 	};
