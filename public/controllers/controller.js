@@ -548,7 +548,7 @@ myApp.controller('itemsController',['$scope','$http', '$localStorage', '$session
 		temp=tempName.split(" ");
 		for(var i=0;i<temp.length;i++){
 			nameProduct=temp[i];
-			searchItem(nameProduct);
+			searchItem(nameProduct.toLowerCase());
 		}
         /*document.getElementById("carouselAction").className="fade Out";
         document.getElementById("carouselAction").style.display="none";*/
